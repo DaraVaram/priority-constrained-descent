@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Priority-Constrained Descent (PCD)"
+license: MIT
+repository-code: "https://github.com/DaraVaram/priority-constrained-descent"
+authors:
+  - family-names: Varam
+    given-names: Dara
+  - family-names: AlHajri
+    given-names: Mohamed I.
+preferred-citation:
+  type: article
+  title: "Not All Objectives Are Born Equal: Priority-Constrained Descent for Hierarchical Multi-Objective Optimization"
+  authors:
+    - family-names: Varam
+      given-names: Dara
+    - family-names: AlHajri
+      given-names: Mohamed I.
+  journal: "Transactions on Machine Learning Research"
+  issn: "2835-8856"
+  year: 2026
+  url: "https://openreview.net/forum?id=HT01yGHLEt"

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "priority-constrained-descent"
+version = "1.0.0"
+description = "Priority-Constrained Descent (PCD) for hierarchical multi-objective optimization (TMLR 2026)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Dara Varam"}, {name = "Mohamed I. AlHajri"}]
+requires-python = ">=3.8"
+dependencies = ["numpy", "torch>=1.13"]
+keywords = ["multi-objective optimization", "constrained optimization", "gradient descent", "pruning", "sparsity", "pytorch"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+experiments = ["torchvision"]
+examples = ["matplotlib"]
+test = ["pytest"]
+
+[project.urls]
+Paper = "https://openreview.net/forum?id=HT01yGHLEt"
+arXiv = "https://arxiv.org/abs/2606.29521"
+Homepage = "https://daravaram.github.io/PCD/"
+
+[tool.setuptools]
+packages = ["pcd"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
