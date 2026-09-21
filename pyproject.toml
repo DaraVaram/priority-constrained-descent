@@ -9,7 +9,7 @@ description = "Priority-Constrained Descent (PCD) for hierarchical multi-objecti
 readme = "README.md"
 license = {text = "MIT"}
 authors = [{name = "Dara Varam"}, {name = "Mohamed I. AlHajri"}]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = ["numpy", "torch>=1.13"]
 keywords = ["multi-objective optimization", "constrained optimization", "gradient descent", "pruning", "sparsity", "pytorch"]
 classifiers = [

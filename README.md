@@ -1,5 +1,7 @@
 # Priority-Constrained Descent (PCD)
 
+[![tests](https://github.com/DaraVaram/priority-constrained-descent/actions/workflows/tests.yml/badge.svg)](https://github.com/DaraVaram/priority-constrained-descent/actions/workflows/tests.yml)
+
 Code for **Not All Objectives Are Born Equal: Priority-Constrained Descent for Hierarchical Multi-Objective Optimization**, by Dara Varam and Mohamed I. AlHajri (*Transactions on Machine Learning Research*, 2026).
 
 [Paper (OpenReview)](https://openreview.net/forum?id=HT01yGHLEt) · [arXiv](https://arxiv.org/abs/2606.29521) · [Project page](https://daravaram.github.io/PCD/)
@@ -47,7 +49,7 @@ for x, y in loader:
 
 ## Examples
 
-[`examples/quickstart.py`](examples/quickstart.py) is feature selection in about thirty seconds on a CPU. Only 5 of 40 inputs carry signal, the primary is the classification loss, and the secondary is a group lasso over the first layer's input columns:
+[`examples/quickstart.py`](examples/quickstart.py) is feature selection in about thirty seconds on a CPU. Only 5 of 40 inputs carry signal, the primary is the classification loss, and the secondary is a group lasso over the first layer's input columns. One run printed the following; the exact numbers vary a little with platform and PyTorch version:
 
 ```
  tau   test acc   features kept   informative kept
