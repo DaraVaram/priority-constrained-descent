@@ -1,8 +1,20 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the paper."
+type: software
 title: "Priority-Constrained Descent (PCD)"
+abstract: "PyTorch implementation of Priority-Constrained Descent, a gradient method for hierarchical multi-objective optimization: each update stays as close as possible to the primary objective's gradient while giving every secondary objective a guaranteed, scale-free share of progress."
+version: 1.0.0
+date-released: 2026-09-29
 license: MIT
 repository-code: "https://github.com/DaraVaram/priority-constrained-descent"
+url: "https://daravaram.github.io/PCD/"
+keywords:
+  - multi-objective optimization
+  - constrained optimization
+  - gradient descent
+  - pruning
+  - sparsity
+  - pytorch
 authors:
   - family-names: Varam
     given-names: Dara
@@ -20,3 +32,10 @@ preferred-citation:
   issn: "2835-8856"
   year: 2026
   url: "https://openreview.net/forum?id=HT01yGHLEt"
+  identifiers:
+    - type: other
+      value: "arXiv:2606.29521"
+      description: "arXiv preprint"
+    - type: url
+      value: "https://arxiv.org/abs/2606.29521"
+      description: "arXiv abstract page"

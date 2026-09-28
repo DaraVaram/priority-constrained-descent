@@ -26,3 +26,8 @@ jobs:
         run: |
           python examples/toy_conflict.py
           python examples/quickstart.py
+      - name: Tutorial notebook
+        if: matrix.python-version == '3.12'
+        run: |
+          pip install matplotlib nbclient nbformat ipykernel
+          python -c "import nbformat; from nbclient import NotebookClient; nb = nbformat.read('notebooks/pcd_tutorial.ipynb', 4); NotebookClient(nb, timeout=900, kernel_name='python3').execute()"

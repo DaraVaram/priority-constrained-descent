@@ -1,6 +1,7 @@
 # Priority-Constrained Descent (PCD)
 
 [![tests](https://github.com/DaraVaram/priority-constrained-descent/actions/workflows/tests.yml/badge.svg)](https://github.com/DaraVaram/priority-constrained-descent/actions/workflows/tests.yml)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DaraVaram/priority-constrained-descent/blob/main/notebooks/pcd_tutorial.ipynb)
 
 Code for **Not All Objectives Are Born Equal: Priority-Constrained Descent for Hierarchical Multi-Objective Optimization**, by Dara Varam and Mohamed I. AlHajri (*Transactions on Machine Learning Research*, 2026).
 
@@ -15,9 +16,9 @@ $$
 
 Here $\tilde g_i$ is objective $i$'s gradient divided by a running estimate of its size, so the single tolerance $\tau \in [0,1]$ means the same thing for every objective, whatever its scale. It replaces all the loss weights. The solution is closed-form for two objectives and is computed exactly for any handful of them.
 
-<p align="center"><img src="assets/toy_conflict.png" width="720" alt="Trajectories on the two-objective toy problem"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/DaraVaram/priority-constrained-descent/main/assets/toy_conflict.png" width="720" alt="Trajectories on the two-objective toy problem"></p>
 
-*The toy problem of the paper's Fig. 1 ([`examples/toy_conflict.py`](examples/toy_conflict.py)). The primary has two minima; only the right one also satisfies the secondary. A weighted sum stops where the two gradients cancel, while PCD keeps the secondary making progress and ends where both objectives are stationary.*
+*The toy problem of the paper's Fig. 1 ([`examples/toy_conflict.py`](https://github.com/DaraVaram/priority-constrained-descent/blob/main/examples/toy_conflict.py)). The primary has two minima; only the right one also satisfies the secondary. A weighted sum stops where the two gradients cancel, while PCD keeps the secondary making progress and ends where both objectives are stationary.*
 
 ## Install
 
@@ -49,7 +50,9 @@ for x, y in loader:
 
 ## Examples
 
-[`examples/quickstart.py`](examples/quickstart.py) is feature selection in about thirty seconds on a CPU. Only 5 of 40 inputs carry signal, the primary is the classification loss, and the secondary is a group lasso over the first layer's input columns. One run printed the following; the exact numbers vary a little with platform and PyTorch version:
+**Tutorial notebook.** [`notebooks/pcd_tutorial.ipynb`](https://github.com/DaraVaram/priority-constrained-descent/blob/main/notebooks/pcd_tutorial.ipynb) ([open in Colab](https://colab.research.google.com/github/DaraVaram/priority-constrained-descent/blob/main/notebooks/pcd_tutorial.ipynb)) runs on a CPU in a few minutes. It covers the toy problem above, what happens inside a step, feature selection, why τ needs no retuning when a loss is rescaled, and three objectives with a τ for each.
+
+[`examples/quickstart.py`](https://github.com/DaraVaram/priority-constrained-descent/blob/main/examples/quickstart.py) is feature selection in about thirty seconds on a CPU. Only 5 of 40 inputs carry signal, the primary is the classification loss, and the secondary is a group lasso over the first layer's input columns. One run printed the following; the exact numbers vary a little with platform and PyTorch version:
 
 ```
  tau   test acc   features kept   informative kept
@@ -60,7 +63,7 @@ for x, y in loader:
 0.50     95.7%        5 / 40          5 / 5
 ```
 
-[`examples/toy_conflict.py`](examples/toy_conflict.py) reproduces the figure above (`--plot toy.png` to draw it).
+[`examples/toy_conflict.py`](https://github.com/DaraVaram/priority-constrained-descent/blob/main/examples/toy_conflict.py) reproduces the figure above (`--plot toy.png` to draw it).
 
 ## Applying PCD to your own problem
 
@@ -94,7 +97,7 @@ for x, y in loader:
 
 ## Reproducing the paper
 
-[`experiments/`](experiments/) trains the paper's CIFAR models. That covers structured pruning with a group lasso (K = 2; ResNet-34, DenseNet-121, Inception, MobileNetV2) and joint sparsity and low rank with ℓ1 and nuclear-norm penalties (K = 3; ResNet-34, Inception):
+[`experiments/`](https://github.com/DaraVaram/priority-constrained-descent/tree/main/experiments) trains the paper's CIFAR models. That covers structured pruning with a group lasso (K = 2; ResNet-34, DenseNet-121, Inception, MobileNetV2) and joint sparsity and low rank with ℓ1 and nuclear-norm penalties (K = 3; ResNet-34, Inception):
 
 ```bash
 pip install -e ".[experiments]"
@@ -102,7 +105,7 @@ python experiments/train.py --task pruning --arch resnet34 --dataset cifar100 --
 python experiments/train.py --task sparse-lowrank --arch resnet34 --dataset cifar10 --tau 0.02
 ```
 
-[`experiments/README.md`](experiments/README.md) has the full sweeps, the metric definitions, the reproducibility checklist, and how this code relates to the research code.
+[`experiments/README.md`](https://github.com/DaraVaram/priority-constrained-descent/blob/main/experiments/README.md) has the full sweeps, the metric definitions, the reproducibility checklist, and how this code relates to the research code.
 
 ## Tests
 
@@ -132,4 +135,4 @@ The tests check the solver against the paper's closed forms, the KKT conditions 
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](https://github.com/DaraVaram/priority-constrained-descent/blob/main/LICENSE).
